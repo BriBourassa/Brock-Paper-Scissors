@@ -1,0 +1,14 @@
+body {
+    /* display: flex; */
+    background-image: url("./assets/stadium3.webp");
+    position: sticky;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-size: cover;
+
+}
+
+img {
+    background-size: cover;
+    object-position: ;
+}
