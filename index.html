@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Poppins:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Brock Paper Scissors</title>
+    <script type="text/javascript" src="./player.js"></script>
+    <script type="text/javascript" src="./game.js"></script>
+  </head>
+  <body>
+    <!-- <div class="overlay" id="choose-pkmn" onclick="off()"></div>
+    <img src="assets/choose-your-pkmn.png" style="position: absolute; top: 0" onclick="on()"/>
+ -->
+
+
+    <main>
+
+      <section class="overlay choose-pkmn-overlay">
+        <container class="choose-pkmn-overlay-img-container">
+
+          <div class="type-container-3">
+            <p>Classic mode</p>
+            <input type="image" class="type-icon" id="fire-icon-3" src="assets/type-icons/fire-icon.png"/>
+            <input type="image" class="type-icon" id="water-icon-3" src="assets/type-icons/water-icon.png"/>
+            <input type="image" class="type-icon" id="grass-icon-3" src="assets/type-icons/grass-icon.png"/>
+          </div>
+
+          <div>
+            <img class="choose-your-pkmn" src="assets/choose-your-pkmn.png" />
+          </div>
+
+          <div class="type-container-5">
+            <p>Challenge Mode</p>
+            <input type="image" class="type-icon" id="fire-icon-5" src="assets/type-icons/fire-icon.png"/>
+            <input type="image" class="type-icon" id="water-icon-5" src="assets/type-icons/water-icon.png"/>
+            <input type="image" class="type-icon" id="grass-icon-5" src="assets/type-icons/grass-icon.png"/>
+            <input type="image" class="type-icon" id="electric-icon-5" src="assets/type-icons/electric-icon.png"/>
+            <input type="image" class="type-icon" id="ground-icon-5" src="assets/type-icons/ground-icon.png"/>
+          </div>
+
+        </container>
+      </section>
+
+
+      <section id="win-lose-display" >
+  
+      </section>
+
+
+
+
+
+
+
+      <section class="main-game-board hidden" id="main-game">
+
+        <aside class="trainer-1-left" id="left-side">
+            <p>Trainer 1</p>
+            <p>WINS: 0</p>
+            <p>LOSES: 0</p>
+        </aside>
+
+
+
+        <aside class="trainer-2-right" id="right-side">
+            <p>Trainer 2</p>
+            <p>WINS: 0</p>
+            <p>LOSES: 0</p>
+            <!-- <img class="pokemon-R" src="assets/blastoise-R.gif"/> -->
+        </aside>
+
+
+      </section>
+
+
+
+
+
+
+  
+    </main>
+    <script type="text/javascript" src="./main.js"></script>
+
+  </body>
+</html>
