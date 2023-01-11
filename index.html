@@ -1,33 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Poppins:wght@900&display=swap" rel="stylesheet">
-    <title>Pokemon Battle!</title>
-</head>
-<body>
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue&family=Poppins:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Brock Paper Scissors</title>
+  </head>
+  <body>
+    <!-- <div class="overlay" id="choose-pkmn" onclick="off()"></div>
+    <img src="assets/choose-your-pkmn.png" style="position: absolute; top: 0" onclick="on()"/>
+ -->
 
-    <!-- scoreboard in center, fix to background? -->
+    <!-- or use IMAGE MAP? -->
 
+    <main>
 
+      <section class="overlay">
+        <container class="overlay-img-container">
 
+          <div class="type-container-3">
+            <p>Classic mode</p>
+            <img class="type-icon" src="assets/type-icons/fire-icon.png" />
+            <img class="type-icon" src="assets/type-icons/water-icon.png" />
+            <img class="type-icon" src="assets/type-icons/grass-icon.png" />
+          </div>
 
+          <div>
+            <img class="choose-your-pkmn" src="assets/choose-your-pkmn.png" />
+          </div>
 
+          <div class="type-container-5">
+            <p>Challenge Mode</p>
+            <img class="type-icon" src="assets/type-icons/fire-icon.png" />
+            <img class="type-icon" src="assets/type-icons/water-icon.png" />
+            <img class="type-icon" src="assets/type-icons/grass-icon.png" />
+            <img class="type-icon" src="assets/type-icons/electric-icon.png" />
+            <img class="type-icon" src="assets/type-icons/ground-icon.png" />
+          </div>
 
+        </container>
+      </section>
 
-    <!-- <img src="./assets/stadium3.webp" style="position: absolute; top: 0"/> -->
-
-    <img src="assets/charizard-L.gif" style="position: absolute; top: 70px; left: 50px"/>
-
-    
-
+      <!-- need to: 
+    start on overlay
+    see if button can be pic that correlates to each pokemon image -->
+      <!-- make buttons bounce on hover -->
+    </main>
     <script type="text/javascript" src="./main.js"></script>
     <script type="text/javascript" src="./player.js"></script>
     <script type="text/javascript" src="./game.js"></script>
-</body>
+  </body>
 </html>
