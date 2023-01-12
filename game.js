@@ -8,7 +8,15 @@ class Game{
 
 
 
+    startNewGame(){
+        var timeout = setTimeout(winOrLose, 3000)
+        overlay.classList.remove('hidden')
+        mainGameBoard.classList.add('hidden')
 
+
+        // hide/add hidden class to the things
+        // time out - 3 sec
+    }
 
 
    
@@ -24,11 +32,3 @@ class Game{
 
 };
 
-// var water = {
-//     name: 'Blastoise',
-//     img: ['/assets/blastoise-L.gif', '/assets/blastoise-R.gif']
-// }
-// var fire = {
-//     name: 'Charizard',
-//     img: ['/assets/charizard-L.gif', '/assets/charizard-R.gif']
-// }

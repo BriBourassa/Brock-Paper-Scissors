@@ -2,23 +2,33 @@ class Player {
     constructor(name){
         this.name = name;
         this.wins = 0;
-        
+        this.loses = 0;
+        this.pokemon = []
     }
 
     
 
 
-
-
     takeTurn(){
-        // something!! to change data model!! or something!!
+        // conditional to iterate wins or loses
+        this.wins++
+        // var pkmn = []
+
+
+        // this.pokemon.push(pkmn)
+        // to change data model, need an array to hold something?
+
         overlay.classList.add('hidden') 
         mainGameBoard.classList.remove('hidden')
       
-        console.log('hi')
+        // console.log(this.wins)
 
-        // array of current pokmena??
+  
     }
+
+
+ 
+
 
 
         // when fire icon clicked, make charzrd-L
@@ -26,11 +36,6 @@ class Player {
         // 
 
 
-
-        // changes game.turn ???
-
-         
-        // tie icons to pokemon gifs (all left) - this will use innerHTML to insert img tag under 'trainer-1-left'
 
         // tie computer's random choices to gifs (all right)
 
