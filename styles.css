@@ -59,9 +59,16 @@ body {
     width: 8vh;
 }
 
+.classic-mode,
+.challenge-mode {
+    border: double 5px;
+    border-color: gray;
+}
+
 .main-game-board {
     display: flex;
     justify-content: space-between;
+    /* align-items: flex-start; */
     /* position: fixed; */
 }
 
@@ -75,6 +82,12 @@ body {
 
 .pokemon-L,
 .pokemon-R {
-    padding-top: 40%;
+    padding-top: 30%;
 }
+
+p {
+    /* color: red; */
+    /* font-size:large; */
+    font-weight: 700;
+}   
 
