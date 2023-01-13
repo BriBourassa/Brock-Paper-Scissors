@@ -87,6 +87,7 @@ function choosePokemon(){
     `<img class="pokemon-L" src="assets/charizard-L.gif"/>`
     computerRandom(3)
     console.log(game.player1.pokemon)
+
   } else if(this.id === 'water-icon-3' || this.id === 'water-icon-5') {
     game.player1.pokemon.push(pokemon[0])
     game.player1.takeTurn();
@@ -94,6 +95,7 @@ function choosePokemon(){
     `<img class="pokemon-L" src="assets/blastoise-L.gif"/>`
     computerRandom(3)
     console.log(game.player1.pokemon)
+
   } else if(this.id === 'grass-icon-3' || this.id === 'grass-icon-5') {
     game.player1.pokemon.push(pokemon[2])
     game.player1.takeTurn();
@@ -101,6 +103,7 @@ function choosePokemon(){
     `<img class="pokemon-L" src="assets/venusaur-L.gif"/>`
     computerRandom(3)
     console.log(game.player1.pokemon)
+
   } else if(this.id === 'electric-icon-5') {
     game.player1.pokemon.push(pokemon[3])
     game.player1.takeTurn();
@@ -108,6 +111,7 @@ function choosePokemon(){
     `<img class="pokemon-L" src="assets/raichu-L.gif"/>`
     computerRandom(5)
     console.log(game.player1.pokemon)
+
   } else if(this.id === 'ground-icon-5') {
     game.player1.pokemon.push(pokemon[4])
     game.player1.takeTurn();
@@ -128,36 +132,17 @@ function computerRandom(num){
 
 
 
-// takeTurn() {
-//   if(this.player1.pokemon[0].name === 'Venusaur' && this.player2.pokemon[0].name === 'Blastoise'){
-//       this.player1.wins++
-//       this.player2.loses++
-//       console.log('venusaur wins')
-//       //should do innertext? cant manipulate dom in class tho
-//   } else if(this.player1.pokemon.name === 'Blastoise' && this.player2.pokemon.name === 'Charizard'){
-//       this.player1.wins++
-//       this.player2.loses++
-//       console.log('blastoise wins');
-//   } else if(this.player1.pokemon.name === 'Charizard' && this.player2.pokemon.name === 'Venusaur'){
-//       this.player1.wins++
-//       this.player2.loses++
-//       console.log('charizard wins');
-//   } else if(this.player1.pokemon.name === 'Blastoise' && this.player2.pokemon.name === 'Venusaur'){
-//       this.player1.loses++
-//       this.player2.wins++
-//   } else {
-//     return;
-//   }
 
 
 
-//   hide(overlay)
-//   show(mainGameBoard)
-//   // overlay.classList.add('hidden') 
-//   // mainGameBoard.classList.remove('hidden')
+
+
+
+
+
+
+
   
-
-// };
 
 
 
@@ -169,18 +154,6 @@ function computerRandom(num){
 //     return 
 //   }
 // }
-
-
-
-
-// connect to challenge mode section??????
-function computerRandom5(){
-  var rightSidePkmn = ['/assets/blastoise-R.gif', '/assets/charizard-R.gif', '/assets/venusaur-R.gif', '/assets/raichu-R.gif', '/assets/sandslash-R.gif']
-  var pkmn = rightSidePkmn[Math.floor(Math.random()*rightSidePkmn.length)]
-  rightSide.innerHTML += 
-  `<img src="${pkmn}"/>`
-}
-
 
 
 
