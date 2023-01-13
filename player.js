@@ -7,51 +7,34 @@ class Player {
     }
 
     
-
-
-    takeTurn(){
-        // conditional to iterate wins or loses
-        this.wins++
-        // var pkmn = []
-
-
-        // this.pokemon.push(pkmn)
-        // to change data model, need an array to hold something?
-
-        overlay.classList.add('hidden') 
-        mainGameBoard.classList.remove('hidden')
-      
-        // console.log(this.wins)
-
-  
-    }
-
-
- 
-
-
-
-        // when fire icon clicked, make charzrd-L
-        // hide overlay
-        // 
-
-
-
-        // tie computer's random choices to gifs (all right)
-
-        // make win conditions
-
-        // if win, ++
-        // if lose, !nuthin
-        // if draw, 
-        
-
-        //break this apart omg. 
+    // takeTurn(){
+    //     if(this.player1.pokemon[0].name === 'Venusaur' && this.player2.pokemon[0].name === 'Blastoise'){
+    //         this.player1.wins++
+    //         this.player2.loses++
+    //         console.log('venusaur wins')
+    //         //should do innertext? cant manipulate dom in class tho
+    //     } else if(this.player1.pokemon.name === 'Blastoise' && this.player2.pokemon.name === 'Charizard'){
+    //         this.player1.wins++
+    //         this.player2.loses++
+    //         console.log('blastoise wins');
+    //     } else if(this.player1.pokemon.name === 'Charizard' && this.player2.pokemon.name === 'Venusaur'){
+    //         this.player1.wins++
+    //         this.player2.loses++
+    //         console.log('charizard wins');
+    //     } else if(this.player1.pokemon.name === 'Blastoise' && this.player2.pokemon.name === 'Venusaur'){
+    //         this.player1.loses++
+    //         this.player2.wins++
+    //     } 
+       
     
-
-
-
-
-
+    //     hide(overlay)
+    //     show(mainGameBoard)
+    //     // overlay.classList.add('hidden') 
+    //     // mainGameBoard.classList.remove('hidden')
+        
+      
+    //     console.log(this.wins)
+    // }
+    
 
 };

@@ -28,17 +28,6 @@ var pokemon = [
   },
 ];
 
-var trainer1pkmn =[];
-var trainer2pkmn = [];
-
-function test(){
-  if(trainer1pkmn[0].pokemon.name === trainer2pkmn[0].pokemon.loseAgainst){
-    winLoseDisplay.innerHTML +=
-    `<p>YOU WIN</p>`
-  }
-};
-
-
 var fireIcon3 = document.getElementById('fire-icon-3');
 var waterIcon3 = document.getElementById('water-icon-3');
 var grassIcon3 = document.getElementById('grass-icon-3');
@@ -66,38 +55,66 @@ grassIcon5.addEventListener('click', choosePokemon);
 electricIcon5.addEventListener('click', choosePokemon);
 groundIcon5.addEventListener('click', choosePokemon);
 
+const game = new Game()
+
+function show(element) {
+  element.classList.remove('hidden');
+};
+function hide(element) {
+  element.classList.add('hidden');
+};
+
+function displayWin(){
+  winLoseDisplay.innertext 
+ 
+};
+
+function displayLose(){
+
+};
+
+function displayDraw(){
+
+};
+
+
+
 function choosePokemon(){
-  const game = new Game()
   if(this.id === 'fire-icon-3' || this.id === 'fire-icon-5'){
-    trainer1pkmn.push(pokemon[1])
+    game.player1.pokemon.push(pokemon[1])
     game.player1.takeTurn();
     leftSide.innerHTML += 
     `<img class="pokemon-L" src="assets/charizard-L.gif"/>`
     computerRandom(3)
+    console.log(game.player1.pokemon)
   } else if(this.id === 'water-icon-3' || this.id === 'water-icon-5') {
-    trainer1pkmn.push(pokemon[0])
+    game.player1.pokemon.push(pokemon[0])
     game.player1.takeTurn();
     leftSide.innerHTML += 
     `<img class="pokemon-L" src="assets/blastoise-L.gif"/>`
     computerRandom(3)
+    console.log(game.player1.pokemon)
   } else if(this.id === 'grass-icon-3' || this.id === 'grass-icon-5') {
-    trainer1pkmn.push(pokemon[2])
+    game.player1.pokemon.push(pokemon[2])
     game.player1.takeTurn();
     leftSide.innerHTML += 
     `<img class="pokemon-L" src="assets/venusaur-L.gif"/>`
     computerRandom(3)
+    console.log(game.player1.pokemon)
   } else if(this.id === 'electric-icon-5') {
-    trainer1pkmn.push(pokemon[3])
+    game.player1.pokemon.push(pokemon[3])
     game.player1.takeTurn();
     leftSide.innerHTML += 
     `<img class="pokemon-L" src="assets/raichu-L.gif"/>`
     computerRandom(5)
+    console.log(game.player1.pokemon)
   } else if(this.id === 'ground-icon-5') {
-    trainer1pkmn.push(pokemon[4])
+    game.player1.pokemon.push(pokemon[4])
     game.player1.takeTurn();
     leftSide.innerHTML += 
-    `<img class="pokemon-L" src="${trainer1pkmn[0].img[0]}"/>`
+    `<img class="pokemon-L" src="assets/sandslash-L.gif"/>`
     computerRandom(5)
+    console.log(game.player1.pokemon)
   } 
 };
 
@@ -105,15 +122,53 @@ function computerRandom(num){
   var pkmn = pokemon[Math.floor(Math.random()*num)]
   rightSide.innerHTML += 
   `<img src="${pkmn.img[1]}"/>`
-  trainer2pkmn.push(pkmn)
+  game.player2.pokemon.push(pkmn)
+  console.log(game.player2.pokemon)
 };
 
 
-function checkWinConditions(){
-  if(player.pokemon === 'Charizard'){
-    return 
-  }
-}
+
+// takeTurn() {
+//   if(this.player1.pokemon[0].name === 'Venusaur' && this.player2.pokemon[0].name === 'Blastoise'){
+//       this.player1.wins++
+//       this.player2.loses++
+//       console.log('venusaur wins')
+//       //should do innertext? cant manipulate dom in class tho
+//   } else if(this.player1.pokemon.name === 'Blastoise' && this.player2.pokemon.name === 'Charizard'){
+//       this.player1.wins++
+//       this.player2.loses++
+//       console.log('blastoise wins');
+//   } else if(this.player1.pokemon.name === 'Charizard' && this.player2.pokemon.name === 'Venusaur'){
+//       this.player1.wins++
+//       this.player2.loses++
+//       console.log('charizard wins');
+//   } else if(this.player1.pokemon.name === 'Blastoise' && this.player2.pokemon.name === 'Venusaur'){
+//       this.player1.loses++
+//       this.player2.wins++
+//   } else {
+//     return;
+//   }
+
+
+
+//   hide(overlay)
+//   show(mainGameBoard)
+//   // overlay.classList.add('hidden') 
+//   // mainGameBoard.classList.remove('hidden')
+  
+
+// };
+
+
+
+
+
+
+// function checkWinConditions(){
+//   if(player.pokemon === 'Charizard'){
+//     return 
+//   }
+// }
 
 
 
