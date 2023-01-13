@@ -1,13 +1,17 @@
 .hidden {
     display: none !important;
 }
+@font-face {
+    font-family: 'Pokemon';
+    src: url(fonts/Pokemon\ Classic.ttf);
+}
 
 * {
     border: 2px solid green;
-    /* color: rgb(176, 201, 183); */
 }
 
 body {
+    font-family: 'Pokemon', sans-serif;
     background-image: url("./assets/terrain.png");
     position: sticky;
     background-repeat: no-repeat;

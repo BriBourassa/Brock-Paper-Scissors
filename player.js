@@ -6,52 +6,28 @@ class Player {
         this.pokemon = []
     }
 
-    
-
-
-    takeTurn(){
-        // conditional to iterate wins or loses
-        this.wins++
-        // var pkmn = []
-
-
-        // this.pokemon.push(pkmn)
-        // to change data model, need an array to hold something?
-
-        overlay.classList.add('hidden') 
-        mainGameBoard.classList.remove('hidden')
-      
-        // console.log(this.wins)
-
-  
+    getRandomPokemon(num){
+        var pkmn = pokemon[Math.floor(Math.random()*num)]
+        this.pokemon.push(pkmn)
     }
 
-
- 
-
-
-
-        // when fire icon clicked, make charzrd-L
-        // hide overlay
-        // 
-
-
-
-        // tie computer's random choices to gifs (all right)
-
-        // make win conditions
-
-        // if win, ++
-        // if lose, !nuthin
-        // if draw, 
-        
-
-        //break this apart omg. 
-    
-
-
-
-
-
+    choosePokemon(icon){
+        if(icon === 'fire-icon-3' || icon === 'fire-icon-5'){
+            this.pokemon.push(pokemon[1])
+            game.checkWinCondition()
+    }  else if(icon === 'water-icon-3' || icon === 'water-icon-5') {
+            this.pokemon.push(pokemon[0])
+            game.checkWinCondition();
+    } else if(icon === 'grass-icon-3' || icon === 'grass-icon-5') {
+            this.pokemon.push(pokemon[2])
+            game.checkWinCondition();
+    } else if(icon === 'electric-icon-5') {
+            this.pokemon.push(pokemon[3])
+            game.checkWinCondition();
+    } else if(icon === 'ground-icon-5') {
+            this.pokemon.push(pokemon[4])
+            game.checkWinCondition()
+    }
+    }
 
 };
