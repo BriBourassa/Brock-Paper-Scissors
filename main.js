@@ -3,20 +3,14 @@ var pokemon = [
   water = {
     name: 'Blastoise',
     img: ['/assets/blastoise-L.gif', '/assets/blastoise-R.gif'],
-    winAgainst: 'Charizard',
-    loseAgainst: 'Venusaur',
   },
   fire = {
     name: 'Charizard',
     img: ['/assets/charizard-L.gif', '/assets/charizard-R.gif'],
-    winAgainst: 'Venusaur',
-    loseAgainst: 'Blastoise',
   },
   grass = {
     name: 'Venusaur',
     img: ['/assets/venusaur-L.gif', '/assets/venusaur-R.gif'],
-    winAgainst: 'Blastoise',
-    loseAgainst: 'Charizard',
   },
   electric = {
     name: 'Raichu',
@@ -46,14 +40,14 @@ var leftSide = document.querySelector('#left-side');
 var rightSide = document.querySelector('#right-side');
 var winLoseDisplay = document.querySelector('#win-lose-display')
 
-fireIcon3.addEventListener('click', choosePokemon);
-waterIcon3.addEventListener('click', choosePokemon);
-grassIcon3.addEventListener('click', choosePokemon);
-fireIcon5.addEventListener('click', choosePokemon);
-waterIcon5.addEventListener('click', choosePokemon);
-grassIcon5.addEventListener('click', choosePokemon);
-electricIcon5.addEventListener('click', choosePokemon);
-groundIcon5.addEventListener('click', choosePokemon);
+fireIcon3.addEventListener('click', somethingElse);
+waterIcon3.addEventListener('click', somethingElse);
+grassIcon3.addEventListener('click', somethingElse);
+fireIcon5.addEventListener('click', somethingElse);
+waterIcon5.addEventListener('click', somethingElse);
+grassIcon5.addEventListener('click', somethingElse);
+electricIcon5.addEventListener('click', somethingElse);
+groundIcon5.addEventListener('click', somethingElse);
 
 const game = new Game()
 
@@ -79,54 +73,55 @@ function displayDraw(){
 
 
 
-function choosePokemon(){
-  if(this.id === 'fire-icon-3' || this.id === 'fire-icon-5'){
-    game.player1.pokemon.push(pokemon[1])
-    game.player1.takeTurn();
+function somethingElse(event){
+  
+
+  if(event.target.id === 'fire-icon-3' || event.target.id === 'fire-icon-5'){
+
     leftSide.innerHTML += 
     `<img class="pokemon-L" src="assets/charizard-L.gif"/>`
     computerRandom(3)
     console.log(game.player1.pokemon)
 
-  } else if(this.id === 'water-icon-3' || this.id === 'water-icon-5') {
-    game.player1.pokemon.push(pokemon[0])
-    game.player1.takeTurn();
+  } else if(event.target.id === 'water-icon-3' || event.target.id === 'water-icon-5') {
+
     leftSide.innerHTML += 
     `<img class="pokemon-L" src="assets/blastoise-L.gif"/>`
     computerRandom(3)
     console.log(game.player1.pokemon)
 
-  } else if(this.id === 'grass-icon-3' || this.id === 'grass-icon-5') {
-    game.player1.pokemon.push(pokemon[2])
-    game.player1.takeTurn();
+  } else if(event.target.id === 'grass-icon-3' || event.target.id === 'grass-icon-5') {
+
     leftSide.innerHTML += 
     `<img class="pokemon-L" src="assets/venusaur-L.gif"/>`
     computerRandom(3)
     console.log(game.player1.pokemon)
 
-  } else if(this.id === 'electric-icon-5') {
-    game.player1.pokemon.push(pokemon[3])
-    game.player1.takeTurn();
+  } else if(event.target.id === 'electric-icon-5') {
+   
     leftSide.innerHTML += 
     `<img class="pokemon-L" src="assets/raichu-L.gif"/>`
     computerRandom(5)
     console.log(game.player1.pokemon)
 
-  } else if(this.id === 'ground-icon-5') {
-    game.player1.pokemon.push(pokemon[4])
-    game.player1.takeTurn();
+  } else if(event.target.id === 'ground-icon-5') {
+   
     leftSide.innerHTML += 
     `<img class="pokemon-L" src="assets/sandslash-L.gif"/>`
     computerRandom(5)
     console.log(game.player1.pokemon)
   } 
+  game.player1.choosePokemon(event.target.id)
+  hide(overlay)
+  show(mainGameBoard)
 };
 
+
+
 function computerRandom(num){
-  var pkmn = pokemon[Math.floor(Math.random()*num)]
+  game.player2.getRandomPokemon(num)
   rightSide.innerHTML += 
-  `<img src="${pkmn.img[1]}"/>`
-  game.player2.pokemon.push(pkmn)
+  `<img src="${game.player2.pokemon[0].img[1]}"/>`
   console.log(game.player2.pokemon)
 };
 
@@ -134,26 +129,6 @@ function computerRandom(num){
 
 
 
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-// function checkWinConditions(){
-//   if(player.pokemon === 'Charizard'){
-//     return 
-//   }
-// }
 
 
 

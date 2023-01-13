@@ -6,35 +6,28 @@ class Player {
         this.pokemon = []
     }
 
-    // this does not update wins/loses in data model 
-    takeTurn(){
-        if(game.player1.pokemon[0].name === 'Venusaur' && game.player2.pokemon[0].name === 'Blastoise'){
-            this.player1.wins++
-            this.player2.loses++
-            console.log(this.player1.pokemon[0].name)
-        } else if(game.player1.pokemon.name === 'Blastoise' && game.player2.pokemon.name === 'Charizard'){
-            this.player1.wins++
-            this.player2.loses++
-            console.log('blastoise wins');
-        } else if(game.player1.pokemon.name === 'Charizard' && game.player2.pokemon.name === 'Venusaur'){
-            this.player1.wins++
-            this.player2.loses++
-            console.log('charizard wins');
-        } else if(game.player1.pokemon.name === 'Blastoise' && game.player2.pokemon.name === 'Venusaur'){
-            this.player1.loses++
-            this.player2.wins++
-        } 
-       
-    
-        hide(overlay)
-        show(mainGameBoard)
-        // overlay.classList.add('hidden') 
-        // mainGameBoard.classList.remove('hidden')
-        
-      
-        console.log(this.wins)
-        console.log(this.loses)
+    getRandomPokemon(num){
+        var pkmn = pokemon[Math.floor(Math.random()*num)]
+        this.pokemon.push(pkmn)
     }
-    
+
+    choosePokemon(icon){
+        if(icon === 'fire-icon-3' || icon === 'fire-icon-5'){
+            this.pokemon.push(pokemon[1])
+            game.checkWinCondition()
+    }  else if(icon === 'water-icon-3' || icon === 'water-icon-5') {
+            this.pokemon.push(pokemon[0])
+            game.checkWinCondition();
+    } else if(icon === 'grass-icon-3' || icon === 'grass-icon-5') {
+            this.pokemon.push(pokemon[2])
+            game.checkWinCondition();
+    } else if(icon === 'electric-icon-5') {
+            this.pokemon.push(pokemon[3])
+            game.checkWinCondition();
+    } else if(icon === 'ground-icon-5') {
+            this.pokemon.push(pokemon[4])
+            game.checkWinCondition()
+    }
+    }
 
 };

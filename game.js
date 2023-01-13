@@ -2,10 +2,34 @@ class Game{
     constructor(){
         this.player1 = new Player('trainer1');
         this.player2 = new Player('trainer2');
-      
+        this.winConditions = {
+            Charizard: ['Venusaur','Raichu' ],
+            Blastoise: ['Charizard', 'Sandslash'],
+            Venusaur: ['Blastoise', 'Sandslash'],
+            Raichu: ['Blastoise', 'Venusaur'],
+            Sandslash: ['Charizard', 'Raichu']
+        }
     }
 
- 
+    checkWinCondition(){
+        console.log(this.player1.pokemon)
+        console.log(this.player2.pokemon)
+        if(this.winConditions[this.player1.pokemon[0].name].includes(this.player2.pokemon[0].name)){
+    
+            this.player1.wins++
+            this.player2.loses++
+
+            console.log('player 1 wins');
+            return 'player1 wins!!'
+            
+        } else if(this.player1.pokemon[0].name === this.player2.pokemon[0].name){
+            console.log('draw');
+            return "draw"
+        } else {
+            console.log('you lose');
+            return 'you lose you get NOTHING'
+        }
+    }   
 
 
 
