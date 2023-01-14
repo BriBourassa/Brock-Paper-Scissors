@@ -11,21 +11,27 @@ class Game{
         }
     }
 
-    checkWinCondition(){
+
+        checkWinCondition(){
         console.log(this.player1.pokemon)
         console.log(this.player2.pokemon)
+
         if(this.winConditions[this.player1.pokemon[0].name].includes(this.player2.pokemon[0].name)){
-    
+            displayWin()
             this.player1.wins++
             this.player2.loses++
-
+            
             console.log('player 1 wins');
             return 'player1 wins!!'
             
         } else if(this.player1.pokemon[0].name === this.player2.pokemon[0].name){
+            displayDraw()
             console.log('draw');
             return "draw"
         } else {
+            displayLose()
+            this.player1.loses++
+            this.player2.wins++
             console.log('you lose');
             return 'you lose you get NOTHING'
         }

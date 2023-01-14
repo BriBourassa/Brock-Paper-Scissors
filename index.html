@@ -17,16 +17,13 @@
     <script type="text/javascript" src="./game.js"></script>
   </head>
   <body>
-    <!-- <div class="overlay" id="choose-pkmn" onclick="off()"></div>
-    <img src="assets/choose-your-pkmn.png" style="position: absolute; top: 0" onclick="on()"/>
- -->
+  
 
 
     <main>
 
       <section class="overlay choose-pkmn-overlay">
         <container class="choose-pkmn-overlay-img-container">
-
           <div class="type-container-3">
             <p class="classic-mode">Classic mode</p>
             <input type="image" class="type-icon" id="fire-icon-3" value="fire" src="assets/type-icons/fire-icon.png"/>
@@ -34,7 +31,35 @@
             <input type="image" class="type-icon" id="grass-icon-3" value="grass" src="assets/type-icons/grass-icon.png"/>
           </div>
 
-          <div>
+          <div class="middle-section">
+            <section class="type-explanations-3">
+                <ul>
+                    <img src="assets/type-icons/fire.png"><b> ></b>
+                    <img src="assets/type-icons/grass.png"><b> &</b>
+                    <img src="assets/type-icons/electric.png">
+                </ul>
+        
+                <ul>
+                    <img src="assets/type-icons/water.png"><b> ></b>
+                    <img src="assets/type-icons/fire.png"><b> &</b>
+                    <img src="assets/type-icons/ground.png">
+                </ul>
+                <ul>
+                    <img src="assets/type-icons/grass.png"><b> ></b>
+                    <img src="assets/type-icons/water.png"><b> &</b>
+                    <img src="assets/type-icons/ground.png">
+                </ul>
+                <ul>
+                    <img src="assets/type-icons/electric.png"><b> ></b>
+                    <img src="assets/type-icons/water.png"><b> &</b>
+                    <img src="assets/type-icons/grass.png">
+                </ul>
+                <ul>
+                    <img src="assets/type-icons/ground.png"><b> ></b>
+                    <img src="assets/type-icons/fire.png"><b> &</b>
+                    <img src="assets/type-icons/electric.png">
+                </ul>
+            </section>
             <img class="choose-your-pkmn" src="assets/choose-your-pkmn.png" />
           </div>
 
@@ -51,7 +76,12 @@
       </section>
 
 
-      <section id="win-lose-display hidden" >
+      <section class="win-lose-overlay" id="win-lose-display">
+        
+        
+        <!-- <p class="win ">YOU WIN</p>
+        <p class="lose ">YOU LOSE</p>
+        <p class="draw">DRAW</p>  -->
   
       </section>
 
