@@ -40,15 +40,16 @@ class Game{
 
 
 
-    // startNewGame(){
-    //     var timeout = setTimeout(winOrLose, 3000)
-    //     overlay.classList.remove('hidden')
-    //     mainGameBoard.classList.add('hidden')
+    startNewGame(){
+        var timeout = setTimeout(winOrLose, 3000)
+
+        show(overlay)
+        hide(mainGameBoard)
 
 
-    //     // hide/add hidden class to the things
-    //     // time out - 3 sec
-    // }
+        // hide/add hidden class to the things
+        // time out - 3 sec
+    }
 
 
    

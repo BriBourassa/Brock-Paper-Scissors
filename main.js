@@ -39,29 +39,46 @@ var overlay = document.querySelector('.overlay');
 
 var leftSide = document.querySelector('#left-side');
 var rightSide = document.querySelector('#right-side');
-var winLoseDraw = document.querySelector('#win-lose-draw')
+var winLoseDraw = document.querySelector('#win-lose-draw');
 
 
-var classicOverlay = document.querySelector('.classic-overlay')
-var challengeOverlay = document.querySelector('.challenge-overlay')
+var classicOverlay = document.querySelector('.classic-overlay');
+var challengeOverlay = document.querySelector('.challenge-overlay');
 
 
-var classicModeContainer = document.querySelector('.classic-mode-container')
-var challengeModeContainer = document.querySelector('.challenge-mode-container')
-var mainMenu = document.querySelector('.main-menu')
+var classicModeContainer = document.querySelector('.classic-mode-container');
+var challengeModeContainer = document.querySelector('.challenge-mode-container');
+var mainMenu = document.querySelector('.main-menu-container');
+var returnToMainMenuFromClassic = document.getElementById('return-btn-classic');
+var returnToMainMenuFromChallenge = document.getElementById('return-btn-challenge')
+
+// var returnToMainMenu = document.querySelector('.return-to-main')
 
 classicModeContainer.addEventListener('click', function(){
-  hide(mainMenu)
   hide(overlay)
   show(classicOverlay)
-})
+});
 
 challengeModeContainer.addEventListener('click', function(){
-  hide(mainMenu)
   hide(overlay)
   show(challengeOverlay)
+});
+
+returnToMainMenuFromClassic.addEventListener('click', function(){
+  show(mainMenu)
+  hide(classicOverlay)
 })
 
+returnToMainMenuFromChallenge.addEventListener('click', function(){
+  show(mainMenu)
+  hide(challengeOverlay)
+})
+
+// returnToMainMenu.addEventListener('click', function(){
+//   show(mainMenu)
+//   hide(classicOverlay)
+//   hide(challengeOverlay)
+// })
 
 
 fireIcon3.addEventListener('click', startBattle);
@@ -83,16 +100,14 @@ function hide(element) {
   element.classList.add('hidden');
 };
 
-// setTimeout(() => {
-//       displayWin()
-// }, 3000);
+
+setTimeout(() => {
+      displayWin()
+}, 3000);
 
 
 // need a timer for return to menu screen - 
-//
-// main menu- CHOOSE MODE 
-// make two mini-menu screens, one for classic and one for challenge
-// need return to MAIN menu screen
+
 // need to change the displayed wins/loses (innertext)
 
 
