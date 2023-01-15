@@ -29,5 +29,4 @@ class Player {
             game.checkWinCondition()
     }
     }
-
 };
