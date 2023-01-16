@@ -53,16 +53,22 @@ var computerLoses = document.getElementById('computer-wins');
 var leftPokemon = document.getElementById('left-pkmn')
 var rightPokemon = document.getElementById('right-pkmn')
 
-var currentGameMode = undefined;
-
-
 var classicModeContainer = document.querySelector('.classic-mode-container');
 var challengeModeContainer = document.querySelector('.challenge-mode-container');
 var mainMenu = document.querySelector('.main-menu-container');
 var returnToMainMenuFromClassic = document.getElementById('return-btn-classic');
 var returnToMainMenuFromChallenge = document.getElementById('return-btn-challenge')
+var returnToMainMenu = document.querySelector('.return-to-main')
 
-// var returnToMainMenu = document.querySelector('.return-to-main')
+fireIcon3.addEventListener('click', startBattle);
+waterIcon3.addEventListener('click', startBattle);
+grassIcon3.addEventListener('click', startBattle);
+
+fireIcon5.addEventListener('click', startBattle);
+waterIcon5.addEventListener('click', startBattle);
+grassIcon5.addEventListener('click', startBattle);
+electricIcon5.addEventListener('click', startBattle);
+groundIcon5.addEventListener('click', startBattle);
 
 classicModeContainer.addEventListener('click', function(){
   hide(overlay)
@@ -79,33 +85,20 @@ challengeModeContainer.addEventListener('click', function(){
 returnToMainMenuFromClassic.addEventListener('click', function(){
   show(mainMenu)
   hide(classicOverlay)
-  // clear wins/losses
-})
+  game.clearBoard()
+});
 
 returnToMainMenuFromChallenge.addEventListener('click', function(){
   show(mainMenu)
   hide(challengeOverlay)
-  // clear wins/ losses
-})
-
-// returnToMainMenu.addEventListener('click', function(){
-//   show(mainMenu)
-//   hide(classicOverlay)
-//   hide(challengeOverlay)
-// })
+  game.clearBoard()
+});
 
 
-fireIcon3.addEventListener('click', startBattle);
-waterIcon3.addEventListener('click', startBattle);
-grassIcon3.addEventListener('click', startBattle);
-
-fireIcon5.addEventListener('click', startBattle);
-waterIcon5.addEventListener('click', startBattle);
-grassIcon5.addEventListener('click', startBattle);
-electricIcon5.addEventListener('click', startBattle);
-groundIcon5.addEventListener('click', startBattle);
 
 const game = new Game()
+var currentGameMode = undefined;
+
 
 function show(element) {
   element.classList.remove('hidden');
@@ -113,18 +106,6 @@ function show(element) {
 function hide(element) {
   element.classList.add('hidden');
 };
-
-
-
-
-function returnToClassicSelection(){
-  
-};
-
-
-
-
-
 
 function displayWin(){
   winLoseDraw.innerHTML =
@@ -141,17 +122,21 @@ function displayDraw(){
   `<p class="draw">DRAW</p>`
 };
 
+function clearWinLoseDrawDisplay(){
+  winLoseDraw.innerHTML =
+  `<p></p>`
+}
+
 function startBattle(event){
   selectPokemon(event);
   game.player1.choosePokemon(event.target.id);
   showMainGameBoard();
-  setTimeout(game.startNewBattle, 3000);
+  updateGameScore();
+  setTimeout(game.startNewBattle, 4000);
 };
 
 function selectPokemon(event){
   if(event.target.id === 'fire-icon-3' || event.target.id === 'fire-icon-5' ){
-    // leftSide.innerHTML = 
-    // `<img class="pokemon-L" src="assets/charizard-L.gif"/>`
     leftPokemon.src="assets/charizard-L.gif"
     computerRandom(3)
   } else if(event.target.id === 'water-icon-3' || event.target.id === 'water-icon-5') {
@@ -161,27 +146,16 @@ function selectPokemon(event){
     leftPokemon.src="assets/venusaur-L.gif"
     computerRandom(3)
   } else if(event.target.id === 'electric-icon-5') {
-    leftSide.src="assets/raichu-L.gif"
+    leftPokemon.src="assets/raichu-L.gif"
     computerRandom(5)
   } else if(event.target.id === 'ground-icon-5') {
-    leftSide.src="assets/sandslash-L.gif"
+    leftPokemon.src="assets/sandslash-L.gif"
     computerRandom(5)
   } 
-  updateGameScore();
 };
-
-
-
-function clearBoard(){
-
-};
-
-
 
 function computerRandom(num){
   game.player2.getRandomPokemon(num)
-  // rightSide.innerHTML = 
-  // `<img class="pokemon-R" src="${game.player2.pokemon[0].img[1]}"/>`
   rightPokemon.src=`${game.player2.pokemon[0].img[1]}`
 };
 
@@ -189,12 +163,14 @@ function showClassicMode(){
   hide(mainGameBoard);
   hide(challengeOverlay);
   show(classicOverlay);
+  clearWinLoseDrawDisplay()
 };
 
 function showChallengeMode(){
   hide(mainGameBoard);
   hide(classicOverlay);
   show(challengeOverlay);
+  clearWinLoseDrawDisplay()
 };
 
 function showMainGameBoard(){
@@ -204,15 +180,9 @@ function showMainGameBoard(){
   show(mainGameBoard)
 };
 
-
 function updateGameScore(){
   playerWins.innerHTML = `WINS: ${game.player1.wins}`
-  playerLoses.innerHTML = `LOSES: ${game.player1.loses}`
+  playerLoses.innerHTML = `LOSSES: ${game.player1.loses}`
   computerWins.innerHTML = `WINS: ${game.player2.wins}`
-  computerLoses.innerHTML = `LOSES: ${game.player2.loses}`
+  computerLoses.innerHTML = `LOSSES: ${game.player2.loses}`
 };
-
-
-
-
-

@@ -5,13 +5,11 @@ class Player {
         this.loses = 0;
         this.pokemon = []
     }
-
     getRandomPokemon(num){
         this.pokemon.pop()
         var pkmn = pokemon[Math.floor(Math.random()*num)]
         this.pokemon.push(pkmn)
     }
-
     choosePokemon(icon){
         this.pokemon.pop()
         if(icon === 'fire-icon-3' || icon === 'fire-icon-5'){
