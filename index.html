@@ -17,78 +17,15 @@
     <script type="text/javascript" src="./game.js"></script>
   </head>
   <body>
-  
-
-
     <main>
 
-<!-- CHOOSE POKEMON old overlay-->
-
-      <!-- <section class="overlay choose-pkmn-overlay hidden">
-        <container class="choose-pkmn-overlay-img-container">
-          <div class="type-container-3">
-            <p class="classic-mode">Classic mode</p>
-            <input type="image" class="type-icon" id="fire-icon-3" value="fire" src="assets/type-icons/fire-icon.png"/>
-            <input type="image" class="type-icon" id="water-icon-3" value="water" src="assets/type-icons/water-icon.png"/>
-            <input type="image" class="type-icon" id="grass-icon-3" value="grass" src="assets/type-icons/grass-icon.png"/>
-          </div>
-
-          <div class="middle-section">
-            <section class="type-explanations-3">
-                <ul>
-                    <img src="assets/type-icons/fire.png"><b> ></b>
-                    <img src="assets/type-icons/grass.png"><b> &</b>
-                    <img src="assets/type-icons/electric.png">
-                </ul>
-        
-                <ul>
-                    <img src="assets/type-icons/water.png"><b> ></b>
-                    <img src="assets/type-icons/fire.png"><b> &</b>
-                    <img src="assets/type-icons/ground.png">
-                </ul>
-                <ul>
-                    <img src="assets/type-icons/grass.png"><b> ></b>
-                    <img src="assets/type-icons/water.png"><b> &</b>
-                    <img src="assets/type-icons/ground.png">
-                </ul>
-                <ul>
-                    <img src="assets/type-icons/electric.png"><b> ></b>
-                    <img src="assets/type-icons/water.png"><b> &</b>
-                    <img src="assets/type-icons/grass.png">
-                </ul>
-                <ul>
-                    <img src="assets/type-icons/ground.png"><b> ></b>
-                    <img src="assets/type-icons/fire.png"><b> &</b>
-                    <img src="assets/type-icons/electric.png">
-                </ul>
-            </section>
-            <img class="choose-your-pkmn" src="assets/choose-your-pkmn.png" />
-          </div>
-          <div class="type-container-5">
-            <p class="challenge-mode">Challenge Mode</p>
-            <input type="image" class="type-icon" id="fire-icon-5" value="fire" src="assets/type-icons/fire-icon.png"/>
-            <input type="image" class="type-icon" id="water-icon-5" value="water" src="assets/type-icons/water-icon.png"/>
-            <input type="image" class="type-icon" id="grass-icon-5" value="grass" src="assets/type-icons/grass-icon.png"/>
-            <input type="image" class="type-icon" id="electric-icon-5" value="electric" src="assets/type-icons/electric-icon.png"/>
-            <input type="image" class="type-icon" id="ground-icon-5" value="ground" src="assets/type-icons/ground-icon.png"/>
-          </div>
-
-        </container>
-      </section> -->
-
-
-
-
 <!--   1   -->
-
 <!-- MAIN MENU - CHOOSE YOUR MODE - CLASSIC OR CHALLENGE W/RULES FOR EACH  -->
 
 <section class="overlay main-menu-container">
-
     <container class="main-menu">
-      
+        <h1>Brock, Paper, Scissors!</h1>
         <p class="choose-difficulty">Choose your difficulty!</p>
-
             <article class="classic-mode-container">
                 <p class="classic-mode">Classic Mode:</p>
                 <container>
@@ -106,11 +43,8 @@
                     <img src="assets/type-icons/grass.png"/><b> ></b>
                     <img src="assets/type-icons/water.png"/>
                 </ul>
-            </container>
+                </container>
             </article>
-
-
-            
             <article class="challenge-mode-container">
                 <p class="challenge-mode">Challenge Mode:</p>
                     <ul>
@@ -118,7 +52,6 @@
                         <img src="assets/type-icons/grass.png"><b> &</b>
                         <img src="assets/type-icons/electric.png">
                     </ul>
-            
                     <ul>
                         <img src="assets/type-icons/water.png"><b> ></b>
                         <img src="assets/type-icons/fire.png"><b> &</b>
@@ -140,11 +73,8 @@
                         <img src="assets/type-icons/electric.png">
                     </ul>
             </article>
-
-
     </container>
 </section>
-
 
 <!--   2   -->
 
@@ -154,18 +84,15 @@
         <container class="choose-pkmn-overlay-img-container">
             <p class="classic-mode-choose-pkmn">Choose your pokemon!</p>
         <div class="type-container-3">
-            <input type="image" class="type-icon" id="fire-icon-3" value="fire" src="assets/type-icons/fire-icon.png"/>
-            <input type="image" class="type-icon" id="water-icon-3" value="water" src="assets/type-icons/water-icon.png"/>
-            <input type="image" class="type-icon" id="grass-icon-3" value="grass" src="assets/type-icons/grass-icon.png"/>
-          </div>
-
+            <input type="image" class="type-icon classic-3" id="fire-icon-3" value="fire" src="assets/type-icons/fire-icon.png"/>
+            <input type="image" class="type-icon classic-3" id="water-icon-3" value="water" src="assets/type-icons/water-icon.png"/>
+            <input type="image" class="type-icon classic-3" id="grass-icon-3" value="grass" src="assets/type-icons/grass-icon.png"/>
+        </div>
           <article class="return-to-main" id="return-btn-classic">
             <p class="return-to-main-menu">Return to Main Menu</p>
           </article>
-
+        </container>
       </section>
-
-
 
 <!--   3   -->
 
@@ -173,59 +100,47 @@
 
       <section class="overlay challenge-overlay hidden">
         <container class="choose-pkmn-overlay-img-container">
-        <p class="challenge-mode-choose-pkmn">Choose your pokemon!</p>
-        <div class="type-container-5">
-            <input type="image" class="type-icon" id="fire-icon-5" value="fire" src="assets/type-icons/fire-icon.png"/>
-            <input type="image" class="type-icon" id="water-icon-5" value="water" src="assets/type-icons/water-icon.png"/>
-            <input type="image" class="type-icon" id="grass-icon-5" value="grass" src="assets/type-icons/grass-icon.png"/>
-            <input type="image" class="type-icon" id="electric-icon-5" value="electric" src="assets/type-icons/electric-icon.png"/>
-            <input type="image" class="type-icon" id="ground-icon-5" value="ground" src="assets/type-icons/ground-icon.png"/>
-          </div>
-
-          <article class="return-to-main" id="return-btn-challenge">
-            <p class="return-to-main-menu">Return to Main Menu</p>
-          </article>
-
+            <p class="challenge-mode-choose-pkmn">Choose your pokemon!</p>
+            <div class="type-container-5">
+                <input type="image" class="type-icon challenge-5" id="fire-icon-5" value="fire" src="assets/type-icons/fire-icon.png"/>
+                <input type="image" class="type-icon challenge-5" id="water-icon-5" value="water" src="assets/type-icons/water-icon.png"/>
+                <input type="image" class="type-icon challenge-5" id="grass-icon-5" value="grass" src="assets/type-icons/grass-icon.png"/>
+                <input type="image" class="type-icon challenge-5" id="electric-icon-5" value="electric" src="assets/type-icons/electric-icon.png"/>
+                <input type="image" class="type-icon challenge-5" id="ground-icon-5" value="ground" src="assets/type-icons/ground-icon.png"/>
+            </div>
+            <article class="return-to-main" id="return-btn-challenge">
+                <p class="return-to-main-menu">Return to Main Menu</p>
+            </article>
+          </container>
       </section>
-
 
 <!--   4   -->
 <!-- MAIN GAME BOARD W/ BATTLE & STATS -->
 
-      <article class="win-lose-draw" id="win-lose-draw">
-        </article>
-      
+      <article class="win-lose-draw" id="win-lose-draw"></article>
       <section class="main-game-board hidden" id="main-game">
-
         <aside class="trainer-1-left" id="left-side">
-            <!-- <img src="assets/ash.gif"/> -->
             <div class="stats">
                 <p>Trainer 1</p>
-                <p>WINS: 0</p>
-                <p>LOSES: 0</p>
+                <p id="player-wins">WINS: 0</p>
+                <p id="player-loses">LOSSES: 0</p>
+            </div>
+            <div>
+                <img src="" id="left-pkmn"/>
             </div>
         </aside>
-
         <aside class="trainer-2-right" id="right-side">
-            <!-- <img src="assets/gary.gif"/> -->
             <div class="stats">
                 <p>Trainer 2</p>
-                <p>WINS: 0</p>
-                <p>LOSES: 0</p>
+                <p id="computer-wins">WINS: 0</p>
+                <p id="computer-loses">LOSSES: 0</p>
+            </div>
+            <div>
+                <img src="" id="right-pkmn"/>
             </div>
         </aside>
-
-
       </section>
-
-
-
-
-
-
-  
     </main>
     <script type="text/javascript" src="./main.js"></script>
-
   </body>
 </html>

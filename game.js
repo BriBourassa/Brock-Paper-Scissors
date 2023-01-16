@@ -10,51 +10,32 @@ class Game{
             Sandslash: ['Charizard', 'Raichu']
         }
     }
-
-
         checkWinCondition(){
-        console.log(this.player1.pokemon)
-        console.log(this.player2.pokemon)
-
         if(this.winConditions[this.player1.pokemon[0].name].includes(this.player2.pokemon[0].name)){
             displayWin()
             this.player1.wins++
             this.player2.loses++
-            
-            console.log('player 1 wins');
-            return 'player1 wins!!'
-            
         } else if(this.player1.pokemon[0].name === this.player2.pokemon[0].name){
             displayDraw()
-            console.log('draw');
-            return "draw"
         } else {
             displayLose()
             this.player1.loses++
             this.player2.wins++
-            console.log('you lose');
-            return 'you lose you get NOTHING'
         }
     }   
-
-
-
-
-    startNewGame(){
-        var timeout = setTimeout(winOrLose, 3000)
-
-        show(overlay)
-        hide(mainGameBoard)
-
-
-        // hide/add hidden class to the things
-        // time out - 3 sec
+    startNewBattle(){
+        if(currentGameMode === 'classic'){
+            showClassicMode()
+        } else {
+            showChallengeMode()
+        }
     }
-
-
-   
-
-
+    clearBoard(){
+        this.player1.wins = 0
+        this.player1.loses = 0
+        this.player2.wins = 0
+        this.player2.loses = 0
+    }
 
  
     // way to keep track of the data for the game board (which pkmn out? OR JUST WHICH PKMN)
