@@ -21,7 +21,8 @@ class Game{
             this.player1.wins++
             this.player2.loses++
             
-            console.log('player 1 wins');
+
+            console.log('player 1 wins', this.player1.wins);
             return 'player1 wins!!'
             
         } else if(this.player1.pokemon[0].name === this.player2.pokemon[0].name){
@@ -40,16 +41,14 @@ class Game{
 
 
 
-    startNewGame(){
-        var timeout = setTimeout(winOrLose, 3000)
-
-        show(overlay)
-        hide(mainGameBoard)
-
-
-        // hide/add hidden class to the things
-        // time out - 3 sec
-    }
+    startNewBattle(){
+       
+        if(currentGameMode === 'classic'){
+            showClassicMode()
+        } else {
+            showChallengeMode()
+        }
+    };
 
 
    

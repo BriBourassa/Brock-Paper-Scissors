@@ -45,6 +45,16 @@ var winLoseDraw = document.querySelector('#win-lose-draw');
 var classicOverlay = document.querySelector('.classic-overlay');
 var challengeOverlay = document.querySelector('.challenge-overlay');
 
+var playerWins = document.getElementById('player-wins');
+var playerLoses = document.getElementById('player-loses');
+var computerWins = document.getElementById('computer-wins');
+var computerLoses = document.getElementById('computer-wins');
+
+var leftPokemon = document.getElementById('left-pkmn')
+var rightPokemon = document.getElementById('right-pkmn')
+
+var currentGameMode = undefined;
+
 
 var classicModeContainer = document.querySelector('.classic-mode-container');
 var challengeModeContainer = document.querySelector('.challenge-mode-container');
@@ -57,21 +67,25 @@ var returnToMainMenuFromChallenge = document.getElementById('return-btn-challeng
 classicModeContainer.addEventListener('click', function(){
   hide(overlay)
   show(classicOverlay)
+  currentGameMode = 'classic'
 });
 
 challengeModeContainer.addEventListener('click', function(){
   hide(overlay)
   show(challengeOverlay)
+  currentGameMode = 'challenge'
 });
 
 returnToMainMenuFromClassic.addEventListener('click', function(){
   show(mainMenu)
   hide(classicOverlay)
+  // clear wins/losses
 })
 
 returnToMainMenuFromChallenge.addEventListener('click', function(){
   show(mainMenu)
   hide(challengeOverlay)
+  // clear wins/ losses
 })
 
 // returnToMainMenu.addEventListener('click', function(){
@@ -101,59 +115,89 @@ function hide(element) {
 };
 
 
-setTimeout(() => {
-      displayWin()
-}, 3000);
 
 
-// need a timer for return to menu screen - 
+function returnToClassicSelection(){
+  
+};
 
-// need to change the displayed wins/loses (innertext)
+
+
+
 
 
 function displayWin(){
-  winLoseDraw.innerHTML +=
+  winLoseDraw.innerHTML =
   `<p class="win">YOU WIN</p>`
 };
 
 function displayLose(){
-  winLoseDraw.innerHTML +=
+  winLoseDraw.innerHTML =
   `<p class="lose">YOU LOSE</p>`
 };
 
 function displayDraw(){
-  winLoseDraw.innerHTML +=
+  winLoseDraw.innerHTML =
   `<p class="draw">DRAW</p>`
 };
 
 function startBattle(event){
+  selectPokemon(event);
+  game.player1.choosePokemon(event.target.id);
+  showMainGameBoard();
+  setTimeout(game.startNewBattle, 3000);
+};
+
+function selectPokemon(event){
   if(event.target.id === 'fire-icon-3' || event.target.id === 'fire-icon-5' ){
-    leftSide.innerHTML += 
-    `<img class="pokemon-L" src="assets/charizard-L.gif"/>`
+    // leftSide.innerHTML = 
+    // `<img class="pokemon-L" src="assets/charizard-L.gif"/>`
+    leftPokemon.src="assets/charizard-L.gif"
     computerRandom(3)
-    // console.log(game.player1.pokemon)
   } else if(event.target.id === 'water-icon-3' || event.target.id === 'water-icon-5') {
-    leftSide.innerHTML += 
-    `<img class="pokemon-L" src="assets/blastoise-L.gif"/>`
+    leftPokemon.src="assets/blastoise-L.gif"
     computerRandom(3)
-    // console.log(game.player1.pokemon)
   } else if(event.target.id === 'grass-icon-3' || event.target.id === 'grass-icon-5') {
-    leftSide.innerHTML += 
-    `<img class="pokemon-L" src="assets/venusaur-L.gif"/>`
+    leftPokemon.src="assets/venusaur-L.gif"
     computerRandom(3)
-    // console.log(game.player1.pokemon)
   } else if(event.target.id === 'electric-icon-5') {
-    leftSide.innerHTML += 
-    `<img class="pokemon-L" src="assets/raichu-L.gif"/>`
+    leftSide.src="assets/raichu-L.gif"
     computerRandom(5)
-    // console.log(game.player1.pokemon)
   } else if(event.target.id === 'ground-icon-5') {
-    leftSide.innerHTML += 
-    `<img class="pokemon-L" src="assets/sandslash-L.gif"/>`
+    leftSide.src="assets/sandslash-L.gif"
     computerRandom(5)
-    // console.log(game.player1.pokemon)
   } 
-  game.player1.choosePokemon(event.target.id)
+  updateGameScore();
+};
+
+
+
+function clearBoard(){
+
+};
+
+
+
+function computerRandom(num){
+  game.player2.getRandomPokemon(num)
+  // rightSide.innerHTML = 
+  // `<img class="pokemon-R" src="${game.player2.pokemon[0].img[1]}"/>`
+  rightPokemon.src=`${game.player2.pokemon[0].img[1]}`
+};
+
+function showClassicMode(){
+  hide(mainGameBoard);
+  hide(challengeOverlay);
+  show(classicOverlay);
+};
+
+function showChallengeMode(){
+  hide(mainGameBoard);
+  hide(classicOverlay);
+  show(challengeOverlay);
+};
+
+function showMainGameBoard(){
   hide(overlay)
   hide(classicOverlay)
   hide(challengeOverlay)
@@ -161,15 +205,12 @@ function startBattle(event){
 };
 
 
-
-function computerRandom(num){
-  game.player2.getRandomPokemon(num)
-  rightSide.innerHTML += 
-  `<img class="pokemon-R" src="${game.player2.pokemon[0].img[1]}"/>`
-  // console.log(game.player2.pokemon)
+function updateGameScore(){
+  playerWins.innerHTML = `WINS: ${game.player1.wins}`
+  playerLoses.innerHTML = `LOSES: ${game.player1.loses}`
+  computerWins.innerHTML = `WINS: ${game.player2.wins}`
+  computerLoses.innerHTML = `LOSES: ${game.player2.loses}`
 };
-
-
 
 
 
