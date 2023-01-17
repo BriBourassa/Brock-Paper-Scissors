@@ -32,3 +32,5 @@ This was the final project in Mod 1 of Turing's Frontend Program.
 One things I focused on for this project is the Single Responsibility Principle (SRP). My aim was to really break down the giant functions that can happen when coding that I have fallen victim to in the past. I also tried to make a clear distinction between the Data Model and the DOM by keeping the function of the two classes (player.js and game.js) to be updating the Data Model, and the DOM representations kept in main.js. 
 
 I am also striving for DRY code and not repeating myself! I implemented an interesting way to not have massive repetitive conditionals while checking the win conditions and put each pokemon in game.js as a key. Then I made each pokemon's value an array of the pokemon they are strong against. Doing so made it easy to use one line of code to check for a win dynamically.
+
+I also learned how local storage works, something I have never done before, when I did the optional extension.
