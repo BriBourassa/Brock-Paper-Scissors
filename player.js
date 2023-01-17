@@ -2,7 +2,7 @@ class Player {
     constructor(name){
         this.name = name;
         this.wins = 0;
-        this.loses = 0;
+        this.losses = 0;
         this.pokemon = []
     }
     getRandomPokemon(num){
@@ -28,5 +28,13 @@ class Player {
             this.pokemon.push(pokemon[4])
             game.checkWinCondition()
     }
+    this.retrieveWinsFromStorage('wins')
+    }
+    saveWinsToStorage(key, value){
+        localStorage.setItem(key, value)
+        console.log('hi rae')
+    }
+    retrieveWinsFromStorage(key){
+        return localStorage.getItem(key)
     }
 };

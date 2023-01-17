@@ -35,20 +35,18 @@ var groundIcon5 = document.querySelector('#ground-icon-5');
 var mainGameBoard = document.querySelector('#main-game');
 
 var overlay = document.querySelector('.overlay');
-// var winOrLose = document.querySelector('#win-lose-display');
 
 var leftSide = document.querySelector('#left-side');
 var rightSide = document.querySelector('#right-side');
 var winLoseDraw = document.querySelector('#win-lose-draw');
 
-
 var classicOverlay = document.querySelector('.classic-overlay');
 var challengeOverlay = document.querySelector('.challenge-overlay');
 
 var playerWins = document.getElementById('player-wins');
-var playerLoses = document.getElementById('player-loses');
+var playerLosses = document.getElementById('player-losses');
 var computerWins = document.getElementById('computer-wins');
-var computerLoses = document.getElementById('computer-wins');
+var computerLosses = document.getElementById('computer-losses');
 
 var leftPokemon = document.getElementById('left-pkmn')
 var rightPokemon = document.getElementById('right-pkmn')
@@ -69,6 +67,21 @@ waterIcon5.addEventListener('click', startBattle);
 grassIcon5.addEventListener('click', startBattle);
 electricIcon5.addEventListener('click', startBattle);
 groundIcon5.addEventListener('click', startBattle);
+
+const game = new Game()
+var currentGameMode = null;
+
+window.addEventListener('load', function(){
+  console.log('hi ian')
+  console.log(game.player1.wins)
+  console.log(game.player1.retrieveWinsFromStorage('player1wins'))
+  if(game.player1.retrieveWinsFromStorage('player1wins') !== null && game.player1.retrieveWinsFromStorage('player1losses') !== null && game.player2.retrieveWinsFromStorage('player2wins') !== null && game.player2.retrieveWinsFromStorage('player2losses') !== null){
+game.player1.wins = game.player1.retrieveWinsFromStorage('player1wins')
+game.player1.losses = game.player1.retrieveWinsFromStorage('player1losses')
+game.player2.wins = game.player2.retrieveWinsFromStorage('player2wins')
+game.player2.losses = game.player2.retrieveWinsFromStorage('player2losses')
+  }
+});
 
 classicModeContainer.addEventListener('click', function(){
   hide(overlay)
@@ -93,12 +106,6 @@ returnToMainMenuFromChallenge.addEventListener('click', function(){
   hide(challengeOverlay)
   game.clearBoard()
 });
-
-
-
-const game = new Game()
-var currentGameMode = undefined;
-
 
 function show(element) {
   element.classList.remove('hidden');
@@ -125,14 +132,14 @@ function displayDraw(){
 function clearWinLoseDrawDisplay(){
   winLoseDraw.innerHTML =
   `<p></p>`
-}
+};
 
 function startBattle(event){
   selectPokemon(event);
   game.player1.choosePokemon(event.target.id);
   showMainGameBoard();
   updateGameScore();
-  setTimeout(game.startNewBattle, 4000);
+  setTimeout(game.startNewBattle, 3000);
 };
 
 function selectPokemon(event){
@@ -182,7 +189,7 @@ function showMainGameBoard(){
 
 function updateGameScore(){
   playerWins.innerHTML = `WINS: ${game.player1.wins}`
-  playerLoses.innerHTML = `LOSSES: ${game.player1.loses}`
+  playerLosses.innerHTML = `LOSSES: ${game.player1.losses}`
   computerWins.innerHTML = `WINS: ${game.player2.wins}`
-  computerLoses.innerHTML = `LOSSES: ${game.player2.loses}`
+  computerLosses.innerHTML = `LOSSES: ${game.player2.losses}`
 };
