@@ -68,6 +68,21 @@ grassIcon5.addEventListener('click', startBattle);
 electricIcon5.addEventListener('click', startBattle);
 groundIcon5.addEventListener('click', startBattle);
 
+const game = new Game()
+var currentGameMode = null;
+
+window.addEventListener('load', function(){
+  console.log('hi ian')
+  console.log(game.player1.wins)
+  console.log(game.player1.retrieveWinsFromStorage('player1wins'))
+  if(game.player1.retrieveWinsFromStorage('player1wins') !== null && game.player1.retrieveWinsFromStorage('player1losses') !== null && game.player2.retrieveWinsFromStorage('player2wins') !== null && game.player2.retrieveWinsFromStorage('player2losses') !== null){
+game.player1.wins = game.player1.retrieveWinsFromStorage('player1wins')
+game.player1.losses = game.player1.retrieveWinsFromStorage('player1losses')
+game.player2.wins = game.player2.retrieveWinsFromStorage('player2wins')
+game.player2.losses = game.player2.retrieveWinsFromStorage('player2losses')
+  }
+});
+
 classicModeContainer.addEventListener('click', function(){
   hide(overlay)
   show(classicOverlay)
@@ -91,9 +106,6 @@ returnToMainMenuFromChallenge.addEventListener('click', function(){
   hide(challengeOverlay)
   game.clearBoard()
 });
-
-const game = new Game()
-var currentGameMode = undefined;
 
 function show(element) {
   element.classList.remove('hidden');

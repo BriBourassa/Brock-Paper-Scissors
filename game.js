@@ -15,12 +15,20 @@ class Game{
             displayWin()
             this.player1.wins++
             this.player2.losses++
+            this.player1.saveWinsToStorage('player1wins', game.player1.wins)
+            this.player2.saveWinsToStorage('player2losses', game.player2.losses)
+            this.player1.saveWinsToStorage('player1losses', game.player1.losses)
+            this.player2.saveWinsToStorage('player2wins', game.player2.wins)
         } else if(this.player1.pokemon[0].name === this.player2.pokemon[0].name){
             displayDraw()
         } else {
             displayLose()
             this.player1.losses++
             this.player2.wins++
+            this.player1.saveWinsToStorage('player1wins', game.player1.wins)
+            this.player2.saveWinsToStorage('player2losses', game.player2.losses)
+            this.player1.saveWinsToStorage('player1losses', game.player1.losses)
+            this.player2.saveWinsToStorage('player2wins', game.player2.wins)
         }
     }   
     startNewBattle(){
