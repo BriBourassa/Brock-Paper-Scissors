@@ -15,6 +15,7 @@ Step 5: Choose your game mode and pokemon type!
 
 ## Preview of App:
 
+![demo3](https://user-images.githubusercontent.com/111149043/212789240-ac604fe8-65ae-4a63-b0bc-684c448fbdc3.png)
 
 
 ## Contributors:
