@@ -72,9 +72,6 @@ const game = new Game()
 var currentGameMode = null;
 
 window.addEventListener('load', function(){
-  console.log('hi ian')
-  console.log(game.player1.wins)
-  console.log(game.player1.retrieveWinsFromStorage('player1wins'))
   if(game.player1.retrieveWinsFromStorage('player1wins') !== null && game.player1.retrieveWinsFromStorage('player1losses') !== null && game.player2.retrieveWinsFromStorage('player2wins') !== null && game.player2.retrieveWinsFromStorage('player2losses') !== null){
 game.player1.wins = game.player1.retrieveWinsFromStorage('player1wins')
 game.player1.losses = game.player1.retrieveWinsFromStorage('player1losses')

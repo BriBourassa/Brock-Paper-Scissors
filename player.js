@@ -32,7 +32,6 @@ class Player {
     }
     saveWinsToStorage(key, value){
         localStorage.setItem(key, value)
-        console.log('hi rae')
     }
     retrieveWinsFromStorage(key){
         return localStorage.getItem(key)
