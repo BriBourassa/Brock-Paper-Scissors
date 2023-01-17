@@ -35,20 +35,18 @@ var groundIcon5 = document.querySelector('#ground-icon-5');
 var mainGameBoard = document.querySelector('#main-game');
 
 var overlay = document.querySelector('.overlay');
-// var winOrLose = document.querySelector('#win-lose-display');
 
 var leftSide = document.querySelector('#left-side');
 var rightSide = document.querySelector('#right-side');
 var winLoseDraw = document.querySelector('#win-lose-draw');
 
-
 var classicOverlay = document.querySelector('.classic-overlay');
 var challengeOverlay = document.querySelector('.challenge-overlay');
 
 var playerWins = document.getElementById('player-wins');
-var playerLoses = document.getElementById('player-loses');
+var playerLosses = document.getElementById('player-losses');
 var computerWins = document.getElementById('computer-wins');
-var computerLoses = document.getElementById('computer-wins');
+var computerLosses = document.getElementById('computer-losses');
 
 var leftPokemon = document.getElementById('left-pkmn')
 var rightPokemon = document.getElementById('right-pkmn')
@@ -94,11 +92,8 @@ returnToMainMenuFromChallenge.addEventListener('click', function(){
   game.clearBoard()
 });
 
-
-
 const game = new Game()
 var currentGameMode = undefined;
-
 
 function show(element) {
   element.classList.remove('hidden');
@@ -125,14 +120,14 @@ function displayDraw(){
 function clearWinLoseDrawDisplay(){
   winLoseDraw.innerHTML =
   `<p></p>`
-}
+};
 
 function startBattle(event){
   selectPokemon(event);
   game.player1.choosePokemon(event.target.id);
   showMainGameBoard();
   updateGameScore();
-  setTimeout(game.startNewBattle, 4000);
+  setTimeout(game.startNewBattle, 3000);
 };
 
 function selectPokemon(event){
@@ -182,7 +177,7 @@ function showMainGameBoard(){
 
 function updateGameScore(){
   playerWins.innerHTML = `WINS: ${game.player1.wins}`
-  playerLoses.innerHTML = `LOSSES: ${game.player1.loses}`
+  playerLosses.innerHTML = `LOSSES: ${game.player1.losses}`
   computerWins.innerHTML = `WINS: ${game.player2.wins}`
-  computerLoses.innerHTML = `LOSSES: ${game.player2.loses}`
+  computerLosses.innerHTML = `LOSSES: ${game.player2.losses}`
 };

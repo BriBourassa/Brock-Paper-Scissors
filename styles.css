@@ -6,10 +6,6 @@
     src: url(fonts/Pokemon\ Classic.ttf);
 }
 
-* {
-    /* border: 2px solid green; */
-}
-
 body {
     font-family: 'Pokemon', sans-serif;
     background-image: url("./assets/terrain.png");
@@ -57,13 +53,6 @@ ul {
     display: flex;
     align-items: center;
 }
-/* 
-.choose-your-pkmn {
-	width: 300px;
-	height: 150px;
-	border-radius: 5px;
-    padding: 20px;
-} */
 
 .type-container-3,
 .type-container-5  {
@@ -85,11 +74,6 @@ ul {
     padding: 10px;
 }
 
-/* .classic-mode,
-.challenge-mode {
-    padding-right: 30px,
-} */
-
 .classic-mode-choose-pkmn,
 .challenge-mode-choose-pkmn{
     border: double 7px rgb(37, 35, 35);
@@ -102,11 +86,6 @@ ul {
     border-radius: 10px;
     padding: 10px;
 }
-
-/* .type-matchup-boxes {
-    display: flex;
-    border: dashed 5px red;
-} */
 
 .classic-mode-container,
 .challenge-mode-container{
@@ -122,8 +101,6 @@ ul {
 .main-game-board {
     display: flex;
     justify-content: space-between;
-    /* align-items: flex-start; */
-    /* position: fixed; */
 }
 
 .trainer-1-left,

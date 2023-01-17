@@ -2,7 +2,7 @@ class Player {
     constructor(name){
         this.name = name;
         this.wins = 0;
-        this.loses = 0;
+        this.losses = 0;
         this.pokemon = []
     }
     getRandomPokemon(num){
