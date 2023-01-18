@@ -13,6 +13,8 @@ Step 3: In terminal - change directory(cd) into newly cloned directory, can also
 Step 4: Open index.html file in browser\
 Step 5: Choose your game mode and pokemon type!
 
+Or visit the deployed website page! https://bribourassa.github.io/Brock-Paper-Scissors/
+
 ## Preview of App:
 
 ![demo3](https://user-images.githubusercontent.com/111149043/212789240-ac604fe8-65ae-4a63-b0bc-684c448fbdc3.png)
