@@ -2,23 +2,23 @@
 var pokemon = [
   water = {
     name: 'Blastoise',
-    img: ['/assets/blastoise-L.gif', '/assets/blastoise-R.gif'],
+    img: ['assets/blastoise-L.gif', 'assets/blastoise-R.gif'],
   },
   fire = {
     name: 'Charizard',
-    img: ['/assets/charizard-L.gif', '/assets/charizard-R.gif'],
+    img: ['assets/charizard-L.gif', 'assets/charizard-R.gif'],
   },
   grass = {
     name: 'Venusaur',
-    img: ['/assets/venusaur-L.gif', '/assets/venusaur-R.gif'],
+    img: ['assets/venusaur-L.gif', 'assets/venusaur-R.gif'],
   },
   electric = {
     name: 'Raichu',
-    img: ['/assets/raichu-L.gif', '/assets/raichu-R.gif']
+    img: ['assets/raichu-L.gif', 'assets/raichu-R.gif']
   },
   ground = {
     name: 'Sandslash',
-    img: ['/assets/sandslash-L.gif', '/assets/sandslash-R.gif']
+    img: ['assets/sandslash-L.gif', 'assets/sandslash-R.gif']
   },
 ];
 
@@ -68,7 +68,7 @@ grassIcon5.addEventListener('click', startBattle);
 electricIcon5.addEventListener('click', startBattle);
 groundIcon5.addEventListener('click', startBattle);
 
-const game = new Game()
+const game = new Game
 var currentGameMode = null;
 
 window.addEventListener('load', function(){
